@@ -1,0 +1,20 @@
+<div class="container" fxLayout="column" fxLayoutAlign="center center" [ngClass]="{'middle-position': alignMiddle}">
+  <img class="pic" src="assets/resources/profile.png" alt="">
+
+  <div xLayout="row" fxLayoutAlign="center center">
+    <a href="https://www.linkedin.com/in/pablo-silva-54413545/" target="_blank">
+      <img class="social-network" src="assets/resources/icons/github.svg">
+    </a>
+    <a href="https://www.linkedin.com/in/pablo-silva-54413545/" target="_blank">
+      <img class="social-network" src="assets/resources/icons/linkedin.svg">
+    </a>
+  </div>
+
+  <div *ngIf="addBrand" fxLayout="column" fxLayoutAlign="center center">
+    <div class="brand-title" fxLayout="row wrap" fxLayoutAlign="center center">
+      <h1>JPS</h1>
+      <h2>Jose Pablo Silva</h2>
+    </div>
+    <p>MAKING IT HAPPEN</p>
+  </div>
+</div>

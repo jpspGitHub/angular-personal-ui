@@ -1,0 +1,15 @@
+<div class="jpsInputWrapper">
+  <label for="jpsInput">
+    {{placeholder}}
+  </label>
+  <ng-container *ngIf="rows === 1 ; else textAreaTemplate">
+    <input class="jpsInput" [type]="type" [(ngModel)]="value"
+      [ngClass]="{'required': required , 'error':hasError, 'success': !hasError && !!value}">
+    <jps-form-errors></jps-form-errors>
+  </ng-container>
+  <ng-template #textAreaTemplate>
+    <textarea class="jpsInput" [rows]="rows" [(ngModel)]="value"
+      [ngClass]="{'required': required , 'error':hasError, 'success': !hasError && !!value}"></textarea>
+    <jps-form-errors></jps-form-errors>
+  </ng-template>
+</div>

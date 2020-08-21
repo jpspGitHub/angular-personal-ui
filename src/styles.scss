@@ -1,0 +1,11 @@
+@import '~src/styles/global.scss';
+@import '~src/styles/variables.scss';
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: $font-family;
+  overflow-x: hidden;
+  // background-color: $primary;
+}

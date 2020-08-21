@@ -1,0 +1,41 @@
+@mixin social-network-mixing($size) {
+  .social-network {
+    height: $size;
+    width: $size;
+    margin: .2em;
+    opacity: .4;
+
+    &:hover {
+      transition: 300ms ease-in-out;
+      opacity: 1;
+    }
+  }
+}
+
+
+@mixin diagonal-div($backshape, $wrapper, $color) {
+  .#{$backshape} .#{$wrapper} {
+    display: block;
+    float: left;
+    margin: 50px auto 200px;
+    width: 100%;
+    padding: 0 5%;
+    transform: skew(0deg, -5deg);
+    -ms-transform: skew(0deg, -10deg);
+    -webkit-transform: skew(0deg, -5deg);
+  }
+
+  .#{$backshape} {
+    z-index: 1;
+    display: block;
+    float: left;
+    margin-top: -100px;
+    width: 100%;
+    background: $color;
+    transform: skew(0deg, 10deg);
+    -ms-transform: skew(0deg, 10deg);
+    /* IE 9 */
+    -webkit-transform: skew(0deg, 5deg);
+    /* Safari and Chrome */
+  }
+}

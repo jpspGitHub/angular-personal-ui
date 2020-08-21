@@ -1,0 +1,42 @@
+<div class="experience-data-content" fxLayout="row" fxLayoutAlign="space-between stretch">
+  <ng-container *ngIf="(selectedItem$ | async); else elseTemplate">
+    <div class="employers-data-section">
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <img class="logo" [src]="(selectedItem$ | async).img" alt="">
+          <h1> {{(selectedItem$ | async).fullName}}</h1>
+        </div>
+        <a class="link" [href]="(selectedItem$ | async).web" target="_blank"><i
+            class="fas fa-external-link-alt"></i></a>
+      </div>
+      <p class="highlighted">{{(selectedItem$ | async).location}}</p>
+      <h3 class="highlighted">{{(selectedItem$ | async).position}}</h3>
+      <p><span *ngFor="let period of (selectedItem$ | async).periodOfTime">{{period.from}} - {{period.to}}</span>
+      </p>
+      <p fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="8px">
+        <span class="chip" *ngFor="let technology of (selectedItem$ | async).technologies">{{technology}}</span>
+      </p>
+      <p>{{(selectedItem$ | async).description}}</p>
+    </div>
+    <div class="employers-data-section">
+      <div fxLayout="column" *ngFor="let project of (selectedItem$ | async).projects">
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <img *ngIf="!!project.img" class="logo" [src]="project.img" alt="">
+            <h3> {{project.name}}</h3>
+          </div>
+          <a *ngIf="!!project.web" class="link" [href]="project.web" target="_blank">
+            <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <p>{{project.location}}</p>
+        <p>{{project.description}}</p>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #elseTemplate>
+  <div class="no-selected" fxLayout="row" fxLayoutAlign="center center">
+    <p>no item selected</p>
+  </div>
+</ng-template>

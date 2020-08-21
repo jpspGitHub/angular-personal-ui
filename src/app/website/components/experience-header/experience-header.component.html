@@ -1,0 +1,11 @@
+<div class="employers-section" fxLayoutAlign="space-between stretch">
+  <div class="item" *ngFor="let item of experiences$ | async" [ngClass]="{'active':item.selected}">
+    <a fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="8px" (click)="onSelectItem(item)">
+      <img class="logo" [src]="item.img" alt="">
+    </a>
+    <div class="text" fxLayout="column">
+      <span>{{item.displayName}}</span>
+      <span class="location">{{item.location}}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+@import '~src/styles/variables.scss';
+
+jps-section-container {
+  width: 100%;
+  max-width: $content-width;
+  margin: 0 auto;
+  display: block;
+  padding-bottom: $content-spacing;
+
+  .section-wrapper {
+    padding: 0 $content-spacing;
+  }
+}

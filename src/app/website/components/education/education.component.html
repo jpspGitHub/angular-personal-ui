@@ -1,0 +1,29 @@
+<jps-section-container [title]="'Education and Skills'" [action]="action">
+  <h2>Studies</h2>
+  <div fxLayout="row" fxLayoutAlign="space-evenly center" class="educational-box">
+    <div fxLayout="column" fxLayoutAlign="center center" *ngFor="let item of educationCourses$ | async">
+      <img class="circle-pic" [src]="item.img" alt="">
+      <div fxLayout="column" fxLayoutAlign="start start">
+        <span>{{item.name}}</span>
+        <span>{{item.institute}}</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>Languages </h2>
+  <div class="languages-container" fxLayout="row" fxLayoutAlign="space-evenly center">
+    <div class="educational-box" fxLayout="row" fxLayoutAlign="space-evenly center"
+      *ngFor="let language of languages$ |async">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <img class="pic" [src]="language.img">
+        <span>{{language.name}}</span>
+      </div>
+      <div class="languages-levels">
+        <p>COMPREHENSION: <span>{{language.comprehensionLevel}}</span></p>
+        <p>EXPRESSION: <span>{{language.expressionLevel}}</span></p>
+        <p>WRITTEN: <span>{{language.writtenLevel}}</span></p>
+      </div>
+    </div>
+  </div>
+</jps-section-container>
+<jps-skills class="parallax"></jps-skills>

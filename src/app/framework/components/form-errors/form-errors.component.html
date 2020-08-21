@@ -1,0 +1,3 @@
+<ng-container *ngIf="hasError">
+  <span class="jps-field-error" *ngFor="let error of errors">{{error | formError}}</span>
+</ng-container>

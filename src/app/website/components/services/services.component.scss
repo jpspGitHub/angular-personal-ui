@@ -1,0 +1,22 @@
+@import '~src/styles/variables.scss';
+// @import '~src/styles/mixings.scss';
+
+
+.service-item {
+  padding: $content-spacing;
+  background-color: $secondary;
+  min-height: 532px;
+
+  &:not(:last-child) {
+    margin-right: $content-spacing;
+  }
+
+  .icon {
+    height: 128px;
+  }
+
+  .title {
+    text-align: center;
+    min-height: 2.8em;
+  }
+}

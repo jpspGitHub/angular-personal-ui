@@ -1,0 +1,8 @@
+export enum MenuAction {
+  ABOUT_ME,
+  EXPERIENCE,
+  RECOMMENDATIONS,
+  EDUCATION_SKILLS,
+  SERVICES,
+  CONTACT
+}

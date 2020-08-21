@@ -1,0 +1,44 @@
+@import '~src/styles/variables.scss';
+
+.educational-box {
+  background-color: rgba(0, 0, 0, .2);
+  padding: 16px;
+
+  .circle-pic {
+    width: 148px;
+    border-radius: 50%;
+  }
+
+  .pic {
+    width: 148px;
+    height: 100px;
+  }
+
+  .languages-levels {
+    p {
+      margin: 0;
+
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+jps-skills {
+  background-color: $primary;
+  color: $primary-contrast;
+  height: auto;
+  box-shadow: 0 3px 8px 0px rgba(0, 0, 0, 0.6);
+
+}
+
+.languages-container {
+  .educational-box {
+    width: calc(33.3% - 8px);
+
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+}

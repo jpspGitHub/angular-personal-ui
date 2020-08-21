@@ -1,0 +1,22 @@
+<div class="skill-indicator" [ngClass]="mode">
+  <span>{{skill?.displayName}}</span>
+
+  <ng-container *ngIf="mode === 'percentage'; else ratingTemplate">
+    <div class="skill-indicator-wrapper">
+      <div class="skill-indicator-value" [style.width.%]="skill?.percentage">
+      </div>
+    </div>
+  </ng-container>
+</div>
+<ng-template #ratingTemplate>
+  <div class="skill-rating-indicator-wrapper">
+    <ng-container *ngFor="let item of startLevels">
+      <ng-container *ngIf="skill?.level > item; else emptyStart">
+        <i class="fas fa-star"></i>
+      </ng-container>
+      <ng-template #emptyStart>
+        <i class="far fa-star"></i>
+      </ng-template>
+    </ng-container>
+  </div>
+</ng-template>

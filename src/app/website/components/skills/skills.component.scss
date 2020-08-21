@@ -1,0 +1,15 @@
+@import '~src/styles/variables.scss';
+
+.skills-container {
+  padding: $content-spacing 0;
+  margin-top: $content-spacing;
+
+  .skill-group {
+    background-color: $secondary;
+    color: $secondary-contrast;
+    padding: $content-spacing;
+    min-width: 309px;
+    min-height: 320px;
+    margin: calc(#{$content-spacing} / 2);
+  }
+}

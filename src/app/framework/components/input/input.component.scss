@@ -1,0 +1,40 @@
+@import '~src/styles/variables.scss';
+
+.jpsInputWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: .5em;
+
+  label {
+    font-size: $x-small-font-size;
+  }
+
+  input {
+    height: 2em;
+  }
+
+  textarea {
+    font-family: $font-family;
+  }
+
+  .jpsInput {
+    border: none;
+    margin: .2em 0;
+    font-size: $small-font-size;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.6);
+
+
+    &.required {
+      border-left: 3px solid $accent-color;
+    }
+
+    &.error {
+      border-left: 3px solid $warn-color;
+    }
+
+    &.success {
+      border-left: 3px solid $success-color;
+
+    }
+  }
+}

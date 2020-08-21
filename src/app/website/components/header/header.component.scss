@@ -1,0 +1,41 @@
+@import '~src/styles/variables.scss';
+@import '~src/styles/mixings.scss';
+
+jps-avatar {
+  padding-top: $content-spacing;
+}
+
+.see-mode-wrapper {
+  position: absolute;
+  width: 100%;
+  bottom: $content-spacing;
+
+  .see-more {
+    color: $primary;
+    max-width: 422px;
+    width: 100%;
+    padding: $content-spacing;
+    font-size: $medium-font-size;
+
+    @keyframes highlight-text {
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: .5;
+      }
+    }
+
+    .see-more-icon {
+      font-size: $x-large-font-size;
+      animation: highlight-text infinite 1000ms;
+    }
+
+    .see-more-text {
+      text-align: center;
+      animation: highlight-text infinite 1000ms;
+    }
+  }
+
+}

@@ -1,0 +1,41 @@
+<nav>
+  <ul class="content" fxLayout="row" fxLayoutAlign="center center">
+    <li *ngFor="let item of menuItems$ | async" class="item" fxLayout="column" fxLayoutAlign="start center"
+      (click)="onMenuItemClick(item.action)">
+      <span>
+        <i [class]="item.icon"></i>
+      </span>
+      <span class="text">{{item.displayName}}</span>
+    </li>
+    <!-- <li class="item" fxLayout="column" fxLayoutAlign="start center">
+      <span>
+        <i class="far fa-question-circle"></i>
+      </span>
+      <span class="text">ABOUT ME</span>
+    </li>
+    <li class="item" fxLayout="column" fxLayoutAlign="start center">
+      <span>
+        <i class="fas fa-history"></i>
+      </span>
+      <span class="text">EXPERIENCE</span>
+    </li>
+    <li class="item" fxLayout="column" fxLayoutAlign="start center">
+      <span>
+        <i class="far fa-star"></i>
+      </span>
+      <span class="text">RECOMMENDATIONS</span>
+    </li>
+    <li class="item" fxLayout="column" fxLayoutAlign="start center">
+      <span>
+        <i class="fas fa-concierge-bell"></i>
+      </span>
+      <span class="text">SERVICES</span>
+    </li>
+    <li class="item" fxLayout="column" fxLayoutAlign="start center">
+      <span>
+        <i class="fas fa-id-card-alt"></i>
+      </span>
+      <span class="text">CONTACT</span>
+    </li> -->
+  </ul>
+</nav>

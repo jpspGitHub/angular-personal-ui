@@ -1,0 +1,46 @@
+@import '~src/styles/variables.scss';
+
+jps-header {
+  display: block;
+  position: relative;
+  min-height: 100%;
+}
+
+jps-header {
+  background-image: url('~src/assets/resources/web-selection/web-back-1.jpg');
+
+}
+
+jps-about {
+  background-image: url('~src/assets/resources/web-selection/web-back-2.jpg');
+  color: $primary-contrast;
+}
+
+jps-experience {
+  background-color: $primary;
+  color: $primary-contrast;
+  box-shadow: 0 3px 8px 0px rgba(0, 0, 0, 0.6);
+}
+
+jps-recommendation {
+  background-color: $primary-light;
+  color: $primary-light-contrast;
+}
+
+jps-education {
+  background-image: url('~src/assets/resources/web-selection/web-back-3.jpg');
+  color: $primary-contrast;
+}
+
+jps-services {
+  background-image: url('~src/assets/resources/web-selection/web-back-4.jpg');
+  color: $primary-contrast;
+  min-height: auto;
+}
+
+jps-contact {
+  background-color: $secondary;
+  color: $secondary-contrast;
+  box-shadow: 0 3px 8px 0px rgba(0, 0, 0, 0.6);
+
+}

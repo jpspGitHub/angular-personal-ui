@@ -1,0 +1,37 @@
+@import '~src/styles/variables.scss';
+
+.experience-data-content {
+  .employers-data-section {
+    max-height: 500px;
+    overflow-y: scroll;
+    color: $primary-light-contrast;
+    background: #fff;
+    padding: $content-spacing;
+
+    &:first-child {
+      width: calc(60% - #{$content-spacing});
+      margin-right: $content-spacing;
+    }
+
+    &:last-child {
+      width: 40%;
+    }
+
+    .logo {
+      width: 73px;
+      margin-right: $content-spacing;
+      vertical-align: middle;
+    }
+
+    .link {
+      font-size: $medium-font-size;
+    }
+  }
+}
+
+.no-selected {
+  width: 100%;
+  padding: calc(#{$content-spacing} / 2);
+  opacity: .6;
+  background: rgba(256, 256, 256, .6);
+}

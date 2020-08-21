@@ -1,0 +1,57 @@
+@import '~src/styles/variables.scss';
+
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: block;
+}
+
+.chip {
+  font-size: 12px;
+  background: $primary;
+  color: $primary-contrast;
+  padding: 1px 9px;
+  border-radius: 8px;
+  margin: .1em 0;
+}
+
+.jps-btn {
+  border: none;
+  background: none;
+  padding: calc(#{$content-spacing} / 4) calc(#{$content-spacing} / 2);
+  font-size: $small-font-size;
+  margin: 0 calc(#{$content-spacing} / 4);
+  color: $primary;
+  border-radius: 3px;
+
+  &.jps-btn-stroked {
+    border: 1px solid $primary;
+    color: $primary;
+
+    &:hover {
+      background-color: $primary-smudgy;
+    }
+  }
+
+  &.jps-btn-flat {
+    background-color: $primary;
+    color: $primary-contrast;
+
+    &:hover {
+      background-color: $primary-smudgy
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: $primary-smudgy;
+  }
+
+  &:focus {
+    border: .5px solid $primary;
+  }
+}

@@ -1,0 +1,14 @@
+<jps-section-container [title]="'Contact'" [action]="action">
+  <div [formGroup]="formGroup" fxLayout="column">
+    <jps-input data-test="contact-name" placeholder="Full Name" [formControlName]="ContactFormNames.NAME" type="text"
+      name="" id=""></jps-input>
+    <jps-input data-test="contact-location" placeholder="Location" [formControlName]="ContactFormNames.LOCATION"
+      type="text" name="" id="">
+    </jps-input>
+    <jps-input data-test="contact-email" placeholder="Email" [formControlName]="ContactFormNames.EMAIL" type="email"
+      name="" id=""></jps-input>
+    <jps-input data-test="contact-message" placeholder="Message" [formControlName]="ContactFormNames.MESSAGE"
+      [rows]="15"></jps-input>
+  </div>
+  <button jps-btn-flat data-test="contact-send">Send</button>
+</jps-section-container>

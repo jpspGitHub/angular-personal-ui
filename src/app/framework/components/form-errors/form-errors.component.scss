@@ -1,0 +1,9 @@
+@import '~src/styles/variables.scss';
+
+.jps-field-error {
+  font-size: $small-font-size;
+  color: $warn-color;
+  font-style: oblique;
+  padding: .5em 0;
+  text-transform: capitalize;
+}

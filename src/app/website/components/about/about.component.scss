@@ -1,0 +1,39 @@
+@import '~src/styles/variables.scss';
+
+.summary-section {
+  position: relative;
+  background: $dark-smudgy;
+  color: $primary-contrast;
+  padding: $content-spacing;
+
+  &:not(:last-child) {
+    margin-bottom: $content-spacing;
+  }
+
+  jps-avatar {
+    margin-right: $content-spacing;
+    max-width: calc(#{$content-width} / .2);
+    width: calc(25% - #{$content-spacing});
+  }
+
+  .summary-text {
+    max-width: calc(#{$content-width} / .8);
+    width: 75%;
+  }
+}
+
+.summary-main-items {
+  min-height: 88px;
+  min-width: 33.3%;
+
+  .value-section {
+    margin-right: $content-spacing;
+    padding-right: $content-spacing;
+    border-right: 1px solid;
+
+    .value {
+      padding: 0;
+      text-align: center;
+    }
+  }
+}
