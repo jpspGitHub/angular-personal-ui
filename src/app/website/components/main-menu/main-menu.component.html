@@ -1,5 +1,13 @@
 <nav>
-  <ul class="content" fxLayout="row" fxLayoutAlign="center center">
+  <button class="direction" (click)="toggleMenu()">
+    <span class="direction-icon" [ngClass]="{'open': !openMenu}">
+      <i class="fas fa-bars"></i>
+    </span>
+    <span class="direction-icon" [ngClass]="{'open': openMenu}">
+      <i class="fas fa-hamburger"></i>
+    </span>
+  </button>
+  <ul class="content" [ngClass]="{'open': openMenu}" fxLayout="row" fxLayoutAlign="space-between start ">
     <li *ngFor="let item of menuItems$ | async" class="item" fxLayout="column" fxLayoutAlign="start center"
       (click)="onMenuItemClick(item.action)">
       <span>
@@ -7,35 +15,5 @@
       </span>
       <span class="text">{{item.displayName}}</span>
     </li>
-    <!-- <li class="item" fxLayout="column" fxLayoutAlign="start center">
-      <span>
-        <i class="far fa-question-circle"></i>
-      </span>
-      <span class="text">ABOUT ME</span>
-    </li>
-    <li class="item" fxLayout="column" fxLayoutAlign="start center">
-      <span>
-        <i class="fas fa-history"></i>
-      </span>
-      <span class="text">EXPERIENCE</span>
-    </li>
-    <li class="item" fxLayout="column" fxLayoutAlign="start center">
-      <span>
-        <i class="far fa-star"></i>
-      </span>
-      <span class="text">RECOMMENDATIONS</span>
-    </li>
-    <li class="item" fxLayout="column" fxLayoutAlign="start center">
-      <span>
-        <i class="fas fa-concierge-bell"></i>
-      </span>
-      <span class="text">SERVICES</span>
-    </li>
-    <li class="item" fxLayout="column" fxLayoutAlign="start center">
-      <span>
-        <i class="fas fa-id-card-alt"></i>
-      </span>
-      <span class="text">CONTACT</span>
-    </li> -->
   </ul>
 </nav>

@@ -5,8 +5,8 @@ export class ExperienceItem {
   fullName: string;
   img: string;
   web: string;
-  position: string;
-  description: string;
+  rol: string;
+  area: string;
   periodOfTime: { from: string, to: string }[];
   selected?: boolean;
   projects: ExperienceProjectItem[];

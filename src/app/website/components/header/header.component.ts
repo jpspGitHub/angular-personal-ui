@@ -1,12 +1,13 @@
 import { SectionService } from './../../../core/services/section.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { BaseComponent } from 'src/app/core/component/base.component';
 import { MenuAction } from '../../enums';
 
 @Component({
   selector: 'jps-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HeaderComponent extends BaseComponent {
   constructor(public sectionService: SectionService) {

@@ -5,9 +5,8 @@ jps-section-container {
   max-width: $content-width;
   margin: 0 auto;
   display: block;
-  padding-bottom: $content-spacing;
 
   .section-wrapper {
-    padding: 0 $content-spacing;
+    padding: $content-spacing 0;
   }
 }

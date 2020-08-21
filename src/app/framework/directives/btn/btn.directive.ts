@@ -7,11 +7,13 @@ import { BaseBtnDirective } from '../../../core/directives/base-btn.directive';
 export class BtnDirective extends BaseBtnDirective {
 
   constructor(public el: ElementRef, public renderer: Renderer2) {
-    super();
+    super(el, renderer);
   }
 
   setClass(): void {
     this.renderer.addClass(this.el.nativeElement, 'jps-btn');
+    this.renderer.addClass(this.el.nativeElement, 'jps-btn-default');
+
   }
 
 }

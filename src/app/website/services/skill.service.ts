@@ -30,19 +30,31 @@ function mockSkills(): Skill[] {
       area: SkillArea.LANGUAGES
     },
     {
-      displayName: 'React',
-      percentage: 60,
-      level: SkillLevel.MEDIUM,
-      area: SkillArea.LANGUAGES
-    },
-    {
       displayName: 'C#',
       percentage: 80,
       level: SkillLevel.VERY_HIGH,
       area: SkillArea.LANGUAGES
     },
     {
+      displayName: 'React',
+      percentage: 60,
+      level: SkillLevel.MEDIUM,
+      area: SkillArea.LANGUAGES
+    },
+    {
       displayName: 'Node.js',
+      percentage: 60,
+      level: SkillLevel.MEDIUM,
+      area: SkillArea.LANGUAGES
+    },
+    {
+      displayName: 'CSS / SASS',
+      percentage: 60,
+      level: SkillLevel.HIGH,
+      area: SkillArea.LANGUAGES
+    },
+    {
+      displayName: 'PHP',
       percentage: 60,
       level: SkillLevel.MEDIUM,
       area: SkillArea.LANGUAGES
@@ -54,15 +66,15 @@ function mockSkills(): Skill[] {
       area: SkillArea.TESTING
     },
     {
-      displayName: 'MSTest',
-      percentage: 60,
-      level: SkillLevel.MEDIUM,
-      area: SkillArea.TESTING
-    },
-    {
       displayName: 'Karma',
       percentage: 60,
       level: SkillLevel.HIGH,
+      area: SkillArea.TESTING
+    },
+    {
+      displayName: 'MSTest',
+      percentage: 60,
+      level: SkillLevel.MEDIUM,
       area: SkillArea.TESTING
     },
     {
@@ -78,9 +90,39 @@ function mockSkills(): Skill[] {
       area: SkillArea.TECHNOLOGY
     },
     {
+      displayName: 'REST full',
+      percentage: 100,
+      level: SkillLevel.VERY_HIGH,
+      area: SkillArea.TECHNOLOGY
+    },
+    {
+      displayName: 'SOAP',
+      percentage: 100,
+      level: SkillLevel.HIGH,
+      area: SkillArea.TECHNOLOGY
+    },
+    {
+      displayName: 'AZURE',
+      percentage: 100,
+      level: SkillLevel.HIGH,
+      area: SkillArea.TECHNOLOGY
+    },
+    {
+      displayName: 'Google cloud',
+      percentage: 100,
+      level: SkillLevel.HIGH,
+      area: SkillArea.TECHNOLOGY
+    },
+    {
+      displayName: 'Web responsive',
+      percentage: 100,
+      level: SkillLevel.HIGH,
+      area: SkillArea.TECHNOLOGY
+    },
+    {
       displayName: 'SQL Server',
       percentage: 90,
-      level: SkillLevel.HIGH,
+      level: SkillLevel.VERY_HIGH,
       area: SkillArea.DATABASE
     },
     {
@@ -102,15 +144,21 @@ function mockSkills(): Skill[] {
       area: SkillArea.DATABASE
     },
     {
-      displayName: 'Front-End Developer',
+      displayName: 'Full Stak Developer',
       percentage: 100,
       level: SkillLevel.VERY_HIGH,
       area: SkillArea.AREAS
     },
     {
-      displayName: 'Back-End Developer',
-      percentage: 100,
+      displayName: 'Code quality',
+      percentage: 70,
       level: SkillLevel.VERY_HIGH,
+      area: SkillArea.AREAS
+    },
+    {
+      displayName: 'UX',
+      percentage: 70,
+      level: SkillLevel.MEDIUM,
       area: SkillArea.AREAS
     },
     {
@@ -120,17 +168,35 @@ function mockSkills(): Skill[] {
       area: SkillArea.AREAS
     },
     {
-      displayName: 'Waterfall Methodology',
-      percentage: 80,
-      level: SkillLevel.HIGH,
-      area: SkillArea.AREAS
-    },
-    {
       displayName: 'Leadership',
       percentage: 70,
       level: SkillLevel.HIGH,
       area: SkillArea.AREAS
     },
+    {
+      displayName: 'Git',
+      percentage: 70,
+      level: SkillLevel.VERY_HIGH,
+      area: SkillArea.TOOLS
+    },
+    {
+      displayName: 'JIRA',
+      percentage: 70,
+      level: SkillLevel.VERY_HIGH,
+      area: SkillArea.TOOLS
+    },
+    {
+      displayName: 'TFS',
+      percentage: 70,
+      level: SkillLevel.VERY_HIGH,
+      area: SkillArea.TOOLS
+    },
+    {
+      displayName: 'Teamcity',
+      percentage: 70,
+      level: SkillLevel.HIGH,
+      area: SkillArea.TOOLS
+    }
   ];
 }
 

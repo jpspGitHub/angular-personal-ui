@@ -1,7 +1,16 @@
-<jps-avatar [addBrand]="true" [alignMiddle]="true"></jps-avatar>
-<div class="see-mode-wrapper" fxLayout="row" fxLayoutAlign="center center">
-  <a (click)="onSeeModeClick()" class="see-more" fxLayout="column" fxLayoutAlign="space-around center">
-    <i class="fas fa-angle-double-down see-more-icon"></i>
-    <span class="see-more-text">Scroll down to discover the magics</span>
-  </a>
-</div>
+<jps-avatar [addBrand]="true" [alignMiddle]="true">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <div class="brand">
+      <h1 class="suffix">JPS</h1>
+      <h2>Jose Pablo Silva</h2>
+    </div>
+    <p>MAKING IT HAPPEN</p>
+  </div>
+</jps-avatar>
+<a (click)="onSeeModeClick()">
+  <div class="see-more-wrapper">
+    <div class="see-more">
+      <i class="fas fa-mouse"></i>
+    </div>
+  </div>
+</a>

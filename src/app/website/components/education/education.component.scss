@@ -1,22 +1,66 @@
 @import '~src/styles/variables.scss';
 
+$item-detail-size: 83px;
+$item-size: calc((#{$content-width} / 4));
+$pic-size: calc((#{$content-width} / 4) - #{$item-detail-size});
+
 .educational-box {
-  background-color: rgba(0, 0, 0, .2);
-  padding: 16px;
+  background-color: $light-smudgy;
+  color: $primary-light-contrast;
+  display: flex;
 
-  .circle-pic {
-    width: 148px;
-    border-radius: 50%;
+  .picture-wrapper {
+    flex-direction: column;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    padding: $content-spacing;
+    width: $item-size;
+    height: $item-size;
+
+    .pic {
+      width: $pic-size;
+      height: $pic-size;
+      min-width: $pic-size;
+      min-height: $pic-size;
+      background-color: #fff;
+      border-radius: 2px;
+    }
+
+    .detail {
+      width: $pic-size;
+      height: $item-detail-size;
+      margin-top: calc(#{$content-spacing}/2);
+      flex-direction: column;
+      display: flex;
+    }
   }
 
-  .pic {
-    width: 148px;
-    height: 100px;
-  }
+  &.languages-container {
+    display: flex;
+    flex-direction: column;
+    min-width: calc((100% /3) - (#{$content-spacing}/3));
 
-  .languages-levels {
-    p {
-      margin: 0;
+    &:not(:last-child) {
+      margin-right: calc(#{$content-spacing} /2);
+    }
+
+    .languages-icon {
+      padding: $content-spacing $content-spacing calc(#{$content-spacing}/2) $content-spacing;
+      display: flex;
+      flex-direction: column;
+      height: 152px;
+
+      span {
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+
+    .languages-levels {
+      padding: calc(#{$content-spacing}/2) $content-spacing $content-spacing $content-spacing;
+      display: flex;
+      flex-direction: column;
 
       span {
         font-weight: 600;
@@ -29,16 +73,48 @@ jps-skills {
   background-color: $primary;
   color: $primary-contrast;
   height: auto;
-  box-shadow: 0 3px 8px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: $box-shadow;
 
 }
 
-.languages-container {
-  .educational-box {
-    width: calc(33.3% - 8px);
+.languages-wrapper {
+  display: flex;
+}
 
-    &:not(:last-child) {
-      margin-right: 16px;
+
+@media only screen and (max-width: 375px) {
+  .educational-box {
+    display: flex;
+    flex-direction: column;
+
+    &.languages-container {
+      &:not(:last-child) {
+        margin-bottom: calc(#{$content-spacing} /2);
+        margin-right: 0;
+      }
     }
+  }
+
+  .languages-wrapper {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 376px)and (max-width: 1024px) {
+  .educational-box {
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+
+    &.languages-container {
+      &:not(:last-child) {
+        margin-bottom: calc(#{$content-spacing} /2);
+        margin-right: 0;
+      }
+    }
+  }
+
+  .languages-wrapper {
+    flex-direction: column;
   }
 }
