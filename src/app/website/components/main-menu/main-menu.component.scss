@@ -1,5 +1,60 @@
 @import '~src/styles/variables.scss';
 
+@keyframes menu-open {
+  from {
+    min-height: 0;
+  }
+
+  to {
+    min-height: 284px;
+  }
+}
+
+@mixin responsive-menu() {
+  jps-main-menu {
+    .direction {
+      display: block;
+      padding: 0;
+      min-height: 58px;
+      border: none;
+      background-color: transparent;
+
+      .direction-icon {
+        position: absolute;
+        padding: 0 .5em;
+        top: 13px;
+        font-size: $large-font-size;
+        color: $light-smudgy;
+        opacity: 0;
+
+        &.open {
+          transition: 250ms ease-in-out;
+          opacity: 1;
+        }
+      }
+    }
+
+    .content {
+      max-height: 0;
+      flex-flow: row wrap;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      background-color: $primary;
+      position: absolute;
+
+      .item {
+        width: 80px;
+      }
+
+      &.open {
+        animation: menu-open 250ms forwards;
+      }
+    }
+  }
+}
+
+
 jps-main-menu {
   width: 100%;
   position: sticky;
@@ -8,17 +63,18 @@ jps-main-menu {
   color: $secondary-contrast;
   z-index: 3;
   display: block;
-  box-shadow: 0 3px 8px 0px $dark-smudgy;
+  box-shadow: $box-shadow;
+
+  .direction {
+    display: none;
+  }
 
   .content {
-    width: 100%;
     max-width: $content-width;
     margin: 0 auto;
-    min-height: 52px;
 
     .item {
-      min-width: 80px;
-      font-size: $large-font-size;
+      font-size: $medium-font-size;
       margin: 0 1em;
       color: $light-smudgy;
       padding: 8px 0;
@@ -34,4 +90,9 @@ jps-main-menu {
       }
     }
   }
+}
+
+
+@media only screen and (max-width: 812px) {
+  @include responsive-menu();
 }

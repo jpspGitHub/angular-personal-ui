@@ -1,4 +1,5 @@
 @import '~src/styles/variables.scss';
+@import '~src/styles/mixings.scss';
 
 
 .parallax {
@@ -20,38 +21,51 @@
 }
 
 .jps-btn {
-  border: none;
-  background: none;
   padding: calc(#{$content-spacing} / 4) calc(#{$content-spacing} / 2);
   font-size: $small-font-size;
   margin: 0 calc(#{$content-spacing} / 4);
-  color: $primary;
-  border-radius: 3px;
+  border-radius: 2px;
+  box-shadow: $box-shadow;
 
   &.jps-btn-stroked {
-    border: 1px solid $primary;
-    color: $primary;
+    &.primary {
+      @include stroked($primary, $primary-contrast);
+    }
 
-    &:hover {
-      background-color: $primary-smudgy;
+    &.secondary {
+      @include stroked($secondary, $secondary-contrast);
+    }
+
+    &.light {
+      @include stroked($primary-light, $primary-light-contrast);
     }
   }
 
   &.jps-btn-flat {
-    background-color: $primary;
-    color: $primary-contrast;
+    &.primary {
+      @include flat($primary, $primary-contrast);
+    }
 
-    &:hover {
-      background-color: $primary-smudgy
+    &.secondary {
+      @include flat($secondary, $secondary-contrast);
+    }
+
+    &.light {
+      @include flat($primary-light, $primary-light-contrast);
     }
   }
 
-  &:hover {
-    cursor: pointer;
-    background-color: $primary-smudgy;
-  }
+  &.jps-btn-default {
+    &.primary {
+      @include default($primary, $primary-contrast);
+    }
 
-  &:focus {
-    border: .5px solid $primary;
+    &.secondary {
+      @include default($secondary, $secondary-contrast);
+    }
+
+    &.light {
+      @include default($primary-light, $primary-light-contrast);
+    }
   }
 }

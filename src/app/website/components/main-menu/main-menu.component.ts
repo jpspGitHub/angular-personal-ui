@@ -12,6 +12,7 @@ import { MenuAction } from '../../enums';
 })
 export class MainMenuComponent implements OnInit {
 
+  openMenu = false;
   menuItems$: Observable<MenuItem[]> = this.menuService.getMenuItems();
 
   constructor(protected menuService: MenuService) { }
@@ -21,5 +22,9 @@ export class MainMenuComponent implements OnInit {
 
   onMenuItemClick(action: MenuAction) {
     this.menuService.selectActionSubject.next(action);
+  }
+
+  toggleMenu() {
+    this.openMenu = !this.openMenu;
   }
 }

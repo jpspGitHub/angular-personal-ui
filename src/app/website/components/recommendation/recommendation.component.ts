@@ -1,11 +1,10 @@
 import { BaseSectionComponent } from './../../../core/component/base-section.component';
-import { Component, OnInit, HostListener, ElementRef, ViewChild, Injector } from '@angular/core';
+import { Component, ElementRef, ViewChild, Injector } from '@angular/core';
 import { RecommendationService } from '../../services/recommendation.service';
-import { Observable, Subject, merge as mergeObservables, BehaviorSubject } from 'rxjs';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
 import { Recommendation } from '../../model';
 import { Selectable } from '../../../core/model/selectable';
-import { map, merge, withLatestFrom, combineAll, tap } from 'rxjs/operators';
-import { trigger, transition, animate } from '@angular/animations';
+import { map, tap } from 'rxjs/operators';
 import { MenuAction } from '../../enums';
 
 enum ButtonAction {

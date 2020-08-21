@@ -1,2 +1,51 @@
 @import '~src/styles/variables.scss';
 @import '~src/styles/mixings.scss';
+
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+
+  .contact-container {
+    width: calc(#{$content-width} / 3);
+
+    .fields-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .button-wrapper {
+      display: flex;
+      justify-content: flex-end;
+
+      .jps-btn {
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 736px) {
+  .contact-wrapper {
+    display: flex;
+    justify-content: center;
+
+    .contact-container {
+      width: 90%;
+
+      .fields-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .button-wrapper {
+        display: flex;
+        justify-content: flex-end;
+
+        .jps-btn {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

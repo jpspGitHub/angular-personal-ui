@@ -1,33 +1,29 @@
 <jps-section-container [title]="'Recommendations'" [action]="action">
-  <div class="indicators-container" fxLayout="column">
-    <div fxLayout="row" fxLayoutAlign="end center" class="selection-bullet-wrapper">
-      <span class="selection-bullet" *ngFor="let recommendation of recommendations$ | async; let i=index"
-        [ngClass]="{'selected': (selectedIndex$ | async) === i}">
-      </span>
-    </div>
+  <div class="carousel-container">
     <div class="recommendation-container" [style.transform]="position$ | async"
       [style.transition]="'transform 300ms ease-in'">
       <div #recommendationWrapper class="recommendation-wrapper"
         *ngFor="let recommendation of recommendations$ | async; let i=index">
-        <div class="recommendation-content" fxLayout="row" [ngClass]="{'selected': (selectedIndex$ | async) === i}">
-          <div class="person" fxLayout="column" fxLayoutAlign="center center">
+        <div class="recommendation-content" [ngClass]="{'selected': (selectedIndex$ | async) === i}">
+          <div class="person">
             <img class="pic" [src]="recommendation.item.img">
             <span class="name">{{recommendation.item.name}}</span>
             <span class="position">{{recommendation.item.position}}</span>
           </div>
           <div class="recommendation">
             <p>{{recommendation.item.description}}</p>
-            <!-- <div class="see-more" fxLayout="row" fxLayoutAlign="center center">
-              <span>See more</span>
-            </div> -->
           </div>
         </div>
       </div>
     </div>
-
-    <div fxLayout="row" class="direction-button-wrapper">
-      <button jps-btn class="direction-button" (click)="previous()"><i class="fas fa-backward"></i></button>
-      <button jps-btn class="direction-button" (click)="next()"><i class="fas fa-forward"></i></button>
+    <div class="selection-bullet-wrapper">
+      <span class="selection-bullet" *ngFor="let recommendation of recommendations$ | async; let i=index"
+        [ngClass]="{'selected': (selectedIndex$ | async) === i}">
+      </span>
+    </div>
+    <div class="direction-button-wrapper">
+      <a class="direction-button" (click)="previous()"><i class="fas fa-chevron-left"></i></a>
+      <a class="direction-button" (click)="next()"><i class="fas fa-chevron-right"></i></a>
     </div>
   </div>
 

@@ -37,7 +37,7 @@ export function educationItemMock(): EducationItem[] {
     {
       name: 'Windows Operator',
       institute: 'CLIE Institute',
-      img: 'assets/resources/education/generic.jpg'
+      img: 'assets/resources/education/generic.png'
     },
   ];
 }

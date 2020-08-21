@@ -1,78 +1,160 @@
 @import '~src/styles/variables.scss';
 
+$item-size: calc(#{$content-width} / 5);
+$item-detail-size: 83px;
+
+@mixin selected-item() {
+  transition: 200ms ease-in-out;
+  opacity: 1;
+  background-color: #fff;
+
+  .item-content {
+    .logo-wrapper {
+      .logo {
+        transition: 250ms ease-in-out;
+        width: $item-size;
+        height: $item-size;
+        border-radius: 0;
+        margin: 0 auto;
+      }
+    }
+
+    .text-wrapper {
+      background-color: $primary;
+
+      .text {
+        color: $primary-contrast;
+      }
+    }
+  }
+}
+
+
+@mixin select-item-responsive() {
+  transition: 200ms ease-in-out;
+  opacity: 1;
+  background-color: #fff;
+
+  .item-content {
+    .logo-wrapper {
+      .logo {
+        transition: 250ms ease-in-out;
+        width: $item-detail-size;
+        height: $item-detail-size;
+        border-radius: 0;
+        margin: 0 auto;
+      }
+    }
+
+    .text-wrapper {
+      background-color: $primary;
+
+      .text {
+        color: $primary-contrast;
+      }
+    }
+  }
+}
+
 .employers-section {
+  place-content: stretch space-between;
+  align-items: stretch;
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
   margin-bottom: $content-spacing;
   background: rgba(256, 256, 256, .6);
 
   .item {
     opacity: .6;
-    padding: $content-spacing;
-    max-width: calc(#{$content-width} / 5);
-    width: calc(100% / 5);
-    height: calc(#{$content-width} / 5);
+    width: $item-size;
+    height: calc(#{$item-size} + #{$item-detail-size});
     position: relative;
 
-    .logo {
-      max-height: 100px;
-      max-width: 100px;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      padding: $content-spacing;
-      background: #fff;
-    }
+    .item-content {
+      .logo-wrapper {
+        width: $item-size;
+        height: $item-size;
 
-    .text {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: $primary-light;
-      color: $primary-light-contrast;
-      padding: $content-spacing;
+        .logo {
+          width: 80%;
+          height: 80%;
+          margin: 2rem auto;
+          border-radius: 50%;
+          background: #fff;
+          display: block;
+        }
+      }
 
-      .location {
-        font-size: $x-small-font-size;
+      .text-wrapper {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: $item-detail-size;
+        width: 100%;
+        background-color: $primary-light;
+        display: flex;
+        align-items: center;
+
+        .text {
+          color: $primary-light-contrast;
+          display: flex;
+          flex-direction: column;
+          margin-left: $content-spacing;
+
+          .location {
+            font-size: $x-small-font-size;
+          }
+        }
       }
     }
+
+
+
 
     &.active {
-      background-color: #fff;
+      @include selected-item();
       opacity: .8;
-
-      .logo {
-        transition: 250ms ease-in-out;
-        max-height: 150px;
-        max-width: 150px;
-        border-radius: 0;
-        padding: $content-spacing;
-        background: #fff;
-      }
-
-      .text {
-        background-color: $primary;
-        color: $primary-contrast;
-      }
     }
 
     &:hover {
       cursor: pointer;
-      transition: 200ms ease-in-out;
-      opacity: 1;
-      background-color: #fff;
+      @include selected-item();
+    }
+  }
+}
 
-      .logo {
-        transition: 250ms ease-in-out;
-        max-height: 150px;
-        max-width: 150px;
-        border-radius: 0;
-        padding: calc(#{$content-spacing} - 50px);
-        background: #fff;
+
+@media only screen and (max-width: 1024px) {
+  .employers-section {
+    flex-direction: column;
+
+    .item {
+      height: $item-detail-size;
+      width: 100%;
+
+      .item-content {
+        display: flex;
+
+        .logo-wrapper {
+          width: $item-detail-size;
+          height: $item-detail-size;
+
+          .logo {
+            margin: auto;
+          }
+        }
+
+        .text-wrapper {
+          position: relative;
+          width: calc(100% - 83px);
+          right: 0;
+        }
       }
 
-      .text {
-        background-color: $primary;
-        color: $primary-contrast;
+      &.active {
+        @include select-item-responsive();
+        opacity: .8;
       }
     }
   }

@@ -4,4 +4,5 @@ export enum SkillArea {
   DATABASE,
   TESTING,
   AREAS,
+  TOOLS,
 }
