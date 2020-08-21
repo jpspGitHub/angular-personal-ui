@@ -17,6 +17,6 @@ export class SectionService {
 
   goToSection(action: MenuAction) {
     const section = this.sections.find(s => s.action === action);
-    document.getElementById(`section_${section.action}`).scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+    document.getElementById(`section_${section.action}`).scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'center' });
   }
 }

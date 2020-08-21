@@ -18,6 +18,8 @@ export class SkillAreaPipe implements PipeTransform {
         return 'Technology';
       case SkillArea.AREAS:
         return 'Areas';
+      case SkillArea.TOOLS:
+        return 'Tools';
     }
   }
 

@@ -6,24 +6,7 @@ jps-avatar {
   color: $primary-contrast;
 
   .container {
-    .pic {
-      border-radius: 50%;
-      max-width: 100%;
-    }
-
+    @include hexagon('profile-pic');
     @include social-network-mixing(32px);
-
-    .brand-title {
-      * {
-        color: $primary-contrast;
-        margin: 0;
-      }
-
-      h1 {
-        padding: 0 $content-spacing 0 0;
-        margin-right: $content-spacing;
-        border-right: 1px solid $primary;
-      }
-    }
   }
 }

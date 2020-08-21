@@ -11,7 +11,7 @@
 <ng-template #ratingTemplate>
   <div class="skill-rating-indicator-wrapper">
     <ng-container *ngFor="let item of startLevels">
-      <ng-container *ngIf="skill?.level > item; else emptyStart">
+      <ng-container *ngIf="skill?.level >= item; else emptyStart">
         <i class="fas fa-star"></i>
       </ng-container>
       <ng-template #emptyStart>

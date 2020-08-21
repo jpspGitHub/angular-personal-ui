@@ -1,8 +1,9 @@
 <jps-section-container>
+  <h2>Skills</h2>
   <div class="skills-container">
-    <h2>Skills</h2>
-    <div fxLayout="row wrap" fxLayoutAlign="center center">
-      <div *ngFor="let skillGroup of skillsGroups$ | async" class="skill-group">
+
+    <div *ngFor="let skillGroup of skillsGroups$ | async" class="skill-group-wrapper">
+      <div class="skill-group">
         <h3>{{skillGroup[0].area | skillArea}}</h3>
         <jps-skill-indicator *ngFor="let skill of skillGroup " [skill]="skill" mode="rating"></jps-skill-indicator>
       </div>

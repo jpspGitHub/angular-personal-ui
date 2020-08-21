@@ -1,41 +1,96 @@
 @import '~src/styles/variables.scss';
 @import '~src/styles/mixings.scss';
 
+@keyframes mouse-moving {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 150px;
+  }
+}
+
+@keyframes mouse-moving-opacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 jps-avatar {
   padding-top: $content-spacing;
 }
 
-.see-mode-wrapper {
+.brand {
+  display: flex;
+
+  .suffix {
+    padding: 0 $content-spacing 0 0;
+    margin-right: $content-spacing;
+    border-right: 1px solid $primary;
+  }
+}
+
+.see-more-wrapper {
   position: absolute;
-  width: 100%;
+  right: $content-spacing;
   bottom: $content-spacing;
+  height: 200px;
+  width: 300px;
+  border-right: 1px solid $primary-light-smudgy;
+
 
   .see-more {
-    color: $primary;
-    max-width: 422px;
-    width: 100%;
-    padding: $content-spacing;
-    font-size: $medium-font-size;
+    position: absolute;
+    font-size: $large-font-size;
+    color: $primary-light-smudgy;
+    animation: mouse-moving forwards 8s;
+    right: $content-spacing;
 
-    @keyframes highlight-text {
-      from {
-        opacity: 1;
-      }
+    &::before {
+      content: 'SCROLL DOWN TO SEE MORE';
+      color: #fff;
+      animation: mouse-moving-opacity forwards 8s;
+      font-size: $x-small-font-size;
+      padding: 6px;
+    }
+  }
+}
 
-      to {
-        opacity: .5;
+@media only screen and (max-height: 667px) {
+
+
+  .see-more-wrapper {
+    display: none;
+  }
+
+  jps-avatar {
+    .container {
+      .pic {
+        max-height: 206px;
       }
     }
+  }
+}
 
-    .see-more-icon {
-      font-size: $x-large-font-size;
-      animation: highlight-text infinite 1000ms;
-    }
+@media only screen and (min-height: 415px) and (max-height: 812px) {
+  .brand {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    .see-more-text {
-      text-align: center;
-      animation: highlight-text infinite 1000ms;
+    .suffix {
+      padding: 0;
+      margin: 0;
+      border: none;
     }
   }
 
+  .see-more-wrapper {
+    bottom: 0;
+  }
 }

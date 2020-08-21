@@ -7,7 +7,7 @@ import { BaseBtnDirective } from 'src/app/core/directives';
 export class BtnFlatDirective extends BaseBtnDirective {
 
   constructor(public el: ElementRef, public renderer: Renderer2) {
-    super();
+    super(el, renderer);
   }
 
   setClass(): void {

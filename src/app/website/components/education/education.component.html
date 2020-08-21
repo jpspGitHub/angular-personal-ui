@@ -1,9 +1,9 @@
 <jps-section-container [title]="'Education and Skills'" [action]="action">
   <h2>Studies</h2>
-  <div fxLayout="row" fxLayoutAlign="space-evenly center" class="educational-box">
-    <div fxLayout="column" fxLayoutAlign="center center" *ngFor="let item of educationCourses$ | async">
-      <img class="circle-pic" [src]="item.img" alt="">
-      <div fxLayout="column" fxLayoutAlign="start start">
+  <div class="educational-box">
+    <div class="picture-wrapper" *ngFor="let item of educationCourses$ | async">
+      <img class="pic" [src]="item.img" alt="">
+      <div class="detail">
         <span>{{item.name}}</span>
         <span>{{item.institute}}</span>
       </div>
@@ -11,17 +11,16 @@
   </div>
 
   <h2>Languages </h2>
-  <div class="languages-container" fxLayout="row" fxLayoutAlign="space-evenly center">
-    <div class="educational-box" fxLayout="row" fxLayoutAlign="space-evenly center"
-      *ngFor="let language of languages$ |async">
-      <div fxLayout="column" fxLayoutAlign="center center">
+  <div class="languages-wrapper">
+    <div class="educational-box languages-container" *ngFor="let language of languages$ |async">
+      <div class="languages-icon">
         <img class="pic" [src]="language.img">
         <span>{{language.name}}</span>
       </div>
       <div class="languages-levels">
-        <p>COMPREHENSION: <span>{{language.comprehensionLevel}}</span></p>
-        <p>EXPRESSION: <span>{{language.expressionLevel}}</span></p>
-        <p>WRITTEN: <span>{{language.writtenLevel}}</span></p>
+        <p class="highlighted">COMPREHENSION: <span>{{language.comprehensionLevel}}</span></p>
+        <p class="highlighted">EXPRESSION: <span>{{language.expressionLevel}}</span></p>
+        <p class="highlighted">WRITTEN: <span>{{language.writtenLevel}}</span></p>
       </div>
     </div>
   </div>

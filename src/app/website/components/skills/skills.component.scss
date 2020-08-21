@@ -1,15 +1,64 @@
 @import '~src/styles/variables.scss';
 
 .skills-container {
-  padding: $content-spacing 0;
-  margin-top: $content-spacing;
+  display: flex;
+  flex-flow: row wrap;
 
-  .skill-group {
-    background-color: $secondary;
-    color: $secondary-contrast;
-    padding: $content-spacing;
-    min-width: 309px;
-    min-height: 320px;
-    margin: calc(#{$content-spacing} / 2);
+  .skill-group-wrapper {
+    width: calc(#{$content-width} /3);
+
+    .skill-group {
+      min-height: 320px;
+      background-color: $dark-smudgy;
+      padding: $content-spacing;
+      margin: 0 calc(#{$content-spacing} / 2) calc(#{$content-spacing} / 2) 0;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 375px) {
+  .skills-container {
+    display: flex;
+    flex-flow: column;
+
+    .skill-group-wrapper {
+      width: 100%;
+
+      .skill-group {
+        margin: 0 0 calc(#{$content-spacing} / 2) 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 376px)and (max-width: 767px) {
+  .skills-container {
+    display: flex;
+    flex-flow: column;
+
+    .skill-group-wrapper {
+      width: 100%;
+
+      .skill-group {
+        margin: 0 0 calc(#{$content-spacing} / 2) 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px)and (max-width: 1024px) {
+  .skills-container {
+    display: flex;
+    flex-flow: row wrap;
+
+    .skill-group-wrapper {
+      width: 50%;
+
+      .skill-group {
+        margin: 0 0 calc(#{$content-spacing} / 2) 0;
+        border-right: 1px solid $primary-smudgy;
+      }
+    }
   }
 }

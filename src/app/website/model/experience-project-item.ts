@@ -1,6 +1,6 @@
 export class ExperienceProjectItem {
   name: string;
-  description: string;
+  area: string;
   location: string;
   img?: string;
   web?: string;

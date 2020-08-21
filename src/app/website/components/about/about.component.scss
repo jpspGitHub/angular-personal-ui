@@ -5,10 +5,10 @@
   background: $dark-smudgy;
   color: $primary-contrast;
   padding: $content-spacing;
-
-  &:not(:last-child) {
-    margin-bottom: $content-spacing;
-  }
+  flex-flow: row wrap;
+  display: flex;
+  place-content: center;
+  align-items: center;
 
   jps-avatar {
     margin-right: $content-spacing;
@@ -17,23 +17,79 @@
   }
 
   .summary-text {
+    flex-direction: column;
+    display: flex;
+    place-content: flex-start center;
+    align-items: flex-start;
     max-width: calc(#{$content-width} / .8);
     width: 75%;
   }
 }
 
-.summary-main-items {
-  min-height: 88px;
-  min-width: 33.3%;
+.summary-items-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  margin: $content-spacing 0;
 
-  .value-section {
-    margin-right: $content-spacing;
-    padding-right: $content-spacing;
-    border-right: 1px solid;
+  .summary-main-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $content-spacing 0;
+    min-height: 88px;
+    min-width: calc((#{$content-width} /3) - (#{$content-spacing}/3));
+    background: $dark-smudgy;
+    color: $primary-contrast;
 
-    .value {
-      padding: 0;
-      text-align: center;
+    &:not(:last-child) {
+      margin-right: calc(#{$content-spacing} /2);
+    }
+
+    .value-section {
+      margin-right: $content-spacing;
+      padding-right: $content-spacing;
+      border-right: 1px solid;
+
+      .value {
+        padding: 0;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .summary-section {
+    padding: 0;
+
+    jps-avatar {
+      display: none;
+    }
+
+    .summary-text {
+      padding: $content-spacing;
+      width: 100%;
+    }
+  }
+
+  .summary-items-wrapper {
+    display: flex;
+    flex-flow: column;
+
+    .summary-main-items {
+      min-height: 88px;
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin: calc(#{$content-spacing} /2) 0;
+
+      .value-section {
+        margin-right: 0;
+        padding-right: 0;
+        border-bottom: 1px solid;
+        border-right: none;
+
+      }
     }
   }
 }

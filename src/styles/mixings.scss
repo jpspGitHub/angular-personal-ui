@@ -1,41 +1,84 @@
 @mixin social-network-mixing($size) {
-  .social-network {
-    height: $size;
-    width: $size;
-    margin: .2em;
-    opacity: .4;
+  .social-network-wrapper {
+    display: flex;
+    place-content: center;
+    align-items: center;
 
-    &:hover {
-      transition: 300ms ease-in-out;
-      opacity: 1;
+    .social-network {
+      height: $size;
+      width: $size;
+      margin: .2em;
+      opacity: .4;
+
+      &:hover {
+        transition: 300ms ease-in-out;
+        opacity: 1;
+      }
     }
   }
 }
 
 
-@mixin diagonal-div($backshape, $wrapper, $color) {
-  .#{$backshape} .#{$wrapper} {
-    display: block;
-    float: left;
-    margin: 50px auto 200px;
-    width: 100%;
-    padding: 0 5%;
-    transform: skew(0deg, -5deg);
-    -ms-transform: skew(0deg, -10deg);
-    -webkit-transform: skew(0deg, -5deg);
-  }
+@mixin hexagon($class) {
+  .#{$class} {
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
 
-  .#{$backshape} {
-    z-index: 1;
-    display: block;
-    float: left;
-    margin-top: -100px;
-    width: 100%;
-    background: $color;
-    transform: skew(0deg, 10deg);
-    -ms-transform: skew(0deg, 10deg);
-    /* IE 9 */
-    -webkit-transform: skew(0deg, 5deg);
-    /* Safari and Chrome */
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    width: 240px;
+    height: 265px;
+    background-color: #424242;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+}
+
+@mixin base-triangle() {
+  border-right: 3.4641em solid transparent;
+  border-left: 3.4641em solid transparent;
+  content: '';
+  height: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  width: 0;
+}
+
+@mixin stroked($color, $contrast) {
+  border: 1px solid $color;
+  color: $color;
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba($color, $alpha: .2);
+  }
+}
+
+@mixin flat($color, $contrast) {
+  border: none;
+  color: $contrast;
+  background-color: $color;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba($color, $alpha: .2);
+  }
+}
+
+@mixin default($color, $contrast) {
+  border: none;
+  color: $color;
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba($color, $alpha: .2);
   }
 }

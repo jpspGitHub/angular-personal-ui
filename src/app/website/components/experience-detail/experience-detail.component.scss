@@ -1,37 +1,91 @@
 @import '~src/styles/variables.scss';
 
 .experience-data-content {
-  .employers-data-section {
-    max-height: 500px;
-    overflow-y: scroll;
-    color: $primary-light-contrast;
+  flex-direction: column;
+  display: flex;
+  place-content: stretch space-between;
+  align-items: stretch;
+
+  .data-section-wrapper {
     background: #fff;
-    padding: $content-spacing;
+
+    .data-section {
+      padding: $content-spacing;
+      color: $primary-light-contrast;
+
+      .data-title {
+        flex-direction: row;
+        box-sizing: border-box;
+        display: flex;
+        place-content: center space-between;
+        align-items: center;
+
+        .employer {
+          flex-direction: row;
+          display: flex;
+          place-content: center flex-start;
+          align-items: center;
+        }
+
+        .link {
+          font-size: $medium-font-size;
+        }
+
+        .logo {
+          width: 73px;
+          margin-right: $content-spacing;
+          vertical-align: middle;
+        }
+      }
+
+      .data-description {
+        padding: .5em 0;
+        margin: 0;
+
+        p {
+          padding: 0;
+        }
+
+        .area {
+          font-weight: 600;
+        }
+      }
+
+    }
+
+    .sub-title {
+      text-transform: uppercase;
+      color: $primary-light-contrast;
+      padding: .5em 0 0 $content-spacing;
+    }
 
     &:first-child {
-      width: calc(60% - #{$content-spacing});
-      margin-right: $content-spacing;
-    }
-
-    &:last-child {
-      width: 40%;
-    }
-
-    .logo {
-      width: 73px;
-      margin-right: $content-spacing;
-      vertical-align: middle;
-    }
-
-    .link {
-      font-size: $medium-font-size;
+      border-bottom: 1px solid;
     }
   }
 }
 
-.no-selected {
-  width: 100%;
-  padding: calc(#{$content-spacing} / 2);
-  opacity: .6;
-  background: rgba(256, 256, 256, .6);
+
+
+@media only screen and (max-width: 812px) {
+  .experience-data-content {
+
+    .employers-data-section-wrapper {
+
+      .employers-data-section {
+
+        .employers-data-title {
+          flex-direction: column;
+
+          .employer {
+            flex-direction: column;
+
+            .logo {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -19,7 +19,7 @@ jps-about {
 jps-experience {
   background-color: $primary;
   color: $primary-contrast;
-  box-shadow: 0 3px 8px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: $box-shadow;
 }
 
 jps-recommendation {
@@ -34,13 +34,12 @@ jps-education {
 
 jps-services {
   background-image: url('~src/assets/resources/web-selection/web-back-4.jpg');
-  color: $primary-contrast;
+  color: $primary-light-contrast;
   min-height: auto;
 }
 
 jps-contact {
-  background-color: $secondary;
-  color: $secondary-contrast;
-  box-shadow: 0 3px 8px 0px rgba(0, 0, 0, 0.6);
-
+  background-color: $primary;
+  color: $primary-contrast;
+  box-shadow: $box-shadow;
 }
